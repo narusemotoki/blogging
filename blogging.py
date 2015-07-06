@@ -1,3 +1,7 @@
+__author__ = 'Motoki Naruse'
+__version__ = '0.0.1'
+__license__ = 'MIT'
+
 import logging
 import logging.handlers
 import types
