@@ -1,3 +1,7 @@
+__author__ = 'Motoki Naruse'
+__version__ = '0.0.1'
+__license__ = 'MIT'
+
 import logging
 import logging.handlers
 import types
@@ -44,6 +48,8 @@ def init(config: dict, name: str=None) -> logging.Logger:
         ), config.get('email'))
 
     logger = logging.getLogger(name)
+    logger.setLevel(logging.NOTSET)
+
     for function in [create_file_hander, create_email_handler]:
         hundler = function()
         if hundler is not None:
