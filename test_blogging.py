@@ -1,9 +1,9 @@
 import unittest
 import unittest.mock as mock
 import blogging
+import logging.handlers
 import os
 import importlib
-import logging
 
 
 class BloggingTest(unittest.TestCase):
@@ -24,7 +24,7 @@ class BloggingTest(unittest.TestCase):
             }
         })
         message = "This is debug message"
-        logging.debug(message)
+        blogging.debug(message)
 
         with open(BloggingTest.filepath) as f:
             actual = f.read()
