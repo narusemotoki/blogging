@@ -38,11 +38,15 @@ The way to use blogging almost same with Python standard logging. First, you can
 
 blogging or getLogger response object has `debug`, `info`, `warning`, `error`, `exception` and `critical` functions. If you pass  'warning` as `level` in config dict to init function, when you call `warning`, `error`, `critical` or `critical`, it will be logged, but when you call `info` or `debug` function, it is not logged.
 
+Logger is common in your application, so you can setup logger via blogging at your application entry point, you can use the logger anywhere.
+
 Handlers
 ========
 
 Common settings
 ---------------
+
+All handlers have level and format.
 
 Levels
 ++++++
