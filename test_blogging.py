@@ -3,7 +3,14 @@ import unittest.mock as mock
 import blogging
 import logging.handlers
 import os
-import importlib
+import sys
+
+if sys.version_info > (3, 4):
+    import importlib
+    reload = importlib.reload
+else:
+    import imp
+    reload = imp.reload
 
 
 class BloggingTest(unittest.TestCase):
@@ -14,7 +21,7 @@ class BloggingTest(unittest.TestCase):
             os.remove(BloggingTest.filepath)
 
         blogging.loggers = {}
-        importlib.reload(logging)
+        reload(logging)
 
     def test_file_hander(self):
         blogging.init({
