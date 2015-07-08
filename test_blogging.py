@@ -1,5 +1,5 @@
 import unittest
-import unittest.mock as mock
+import mock  # unittest.mock is from Python 3.3
 import blogging
 import logging.handlers
 import os
