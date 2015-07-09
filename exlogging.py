@@ -1,5 +1,5 @@
 __author__ = 'Motoki Naruse'
-__version__ = '0.0.2'
+__version__ = '0.1.0'
 __license__ = 'MIT'
 
 import logging.handlers
@@ -23,6 +23,7 @@ default_log_format = Formatter(
 
 def init(config: dict, name: str=None) -> Logger:
     def create_handler(function: types.FunctionType, config: dict) -> Handler:
+        print(config)
         if config is None:
             return None
 
@@ -47,10 +48,18 @@ def init(config: dict, name: str=None) -> Logger:
             secure=()
         ), config.get('email'))
 
+    def create_rotating_file_handler() -> Handler:
+        """See: https://docs.python.org/3.5/library/logging.handlers.html#rotatingfilehandler"""
+        return create_handler(lambda config: logging.handlers.RotatingFileHandler(
+            filename=config['filename'],
+            maxBytes=config.get('max_bytes', 0),
+            backupCount=config.get('backup_count', 0)
+        ), config.get('rotating_file'))
+
     logger = getLogger(name)
     logger.setLevel(NOTSET)
 
-    for function in [create_file_hander, create_email_handler]:
+    for function in [create_file_hander, create_email_handler, create_rotating_file_handler]:
         hundler = function()
         if hundler is not None:
             logger.addHandler(hundler)

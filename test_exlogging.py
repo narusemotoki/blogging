@@ -26,7 +26,7 @@ class ExloggingTest(unittest.TestCase):
     def test_file_hander(self):
         exlogging.init({
             'file': {
-                'filepath': '/tmp/exlogging.log',
+                'filepath': ExloggingTest.filepath,
                 'level': 'debug',
             }
         })
@@ -34,6 +34,23 @@ class ExloggingTest(unittest.TestCase):
         exlogging.debug(message)
 
         with open(ExloggingTest.filepath) as f:
+            actual = f.read()
+
+        self.assertTrue(message in actual, "Should record logging message.")
+
+    def test_rotating_file_hander(self):
+        exlogging.init({
+            'rotating_file': {
+                'filename': ExloggingTest.filepath,
+                'level': 'debug',
+                'max_bytes': 1024 * 1024,
+                'backup_count': 10,
+            }
+        })
+        message = "This is rotating file debug message"
+        exlogging.debug(message)
+
+        with open('{}'.format(ExloggingTest.filepath)) as f:
             actual = f.read()
 
         self.assertTrue(message in actual, "Should record logging message.")

@@ -5,7 +5,7 @@
 exlogging
 #########
 
-exlogging supports to setup python standard logging package.
+Supports to setup python standard logging package.
 
 How to use
 ==========
@@ -65,8 +65,8 @@ If you don't pass log_format here, exlogging uses this format: %(levelname)s %(n
 
 See https://docs.python.org/3.5/library/logging.html#logrecord-attributes
 
-File handler
-------------
+FileHandler
+-----------
 
 When you call logger function, record the message in file at filepath.
 
@@ -78,8 +78,23 @@ When you call logger function, record the message in file at filepath.
         'filepath': str # requirement
     }
 
-Email handler
--------------
+RotatingFileHandler
+-------------------
+
+When you call logger function, record the message in file at filename.
+
+.. code-block:: python
+
+    'file': {
+        'level': str, # requirement
+        'format': str, # optional
+        'filename': str, # requirement
+        'max_bytes': int, # optional
+        'backup_count': int # optional
+    }
+
+EmailHandler
+------------
 
 When you call logger function, send an email with the message.
 
