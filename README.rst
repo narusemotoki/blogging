@@ -19,7 +19,7 @@ The way to use exlogging almost same with Python standard logging. First, you ca
     config = {
         'file': {
             'level': 'debug',
-            'filepath': '/path/to/logfile'
+            'filename': '/path/to/logfile'
         }
         # You can conbinate with other handlers.
     }
@@ -68,14 +68,14 @@ See https://docs.python.org/3.5/library/logging.html#logrecord-attributes
 FileHandler
 -----------
 
-When you call logger function, record the message in file at filepath.
+When you call logger function, record the message in file at filename.
 
 .. code-block:: python
 
     'file': {
         'level': str, # requirement
         'format': str, # optional
-        'filepath': str # requirement
+        'filename': str # requirement
     }
 
 RotatingFileHandler

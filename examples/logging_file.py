@@ -2,7 +2,7 @@ import exlogging
 
 exlogging.init({
     'file': {
-        'filepath': '/tmp/exlogging.log',
+        'filename': '/tmp/exlogging.log',
         'level': 'debug',
     }
 })

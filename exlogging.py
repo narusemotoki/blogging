@@ -34,7 +34,7 @@ def init(config: dict, name: str=None) -> Logger:
 
     def create_file_hander() -> Handler:
         return create_handler(
-            lambda config: FileHandler(filename=config['filepath'], encoding='UTF-8'),
+            lambda config: FileHandler(filename=config['filename'], encoding='UTF-8'),
             config.get('file')
         )
 

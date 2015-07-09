@@ -26,7 +26,7 @@ class ExloggingTest(unittest.TestCase):
     def test_file_hander(self):
         exlogging.init({
             'file': {
-                'filepath': ExloggingTest.filepath,
+                'filename': ExloggingTest.filepath,
                 'level': 'debug',
             }
         })
