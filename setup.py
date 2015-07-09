@@ -14,7 +14,7 @@ def readme():
 setup(
     name='exlogging',
     version=exlogging.__version__,
-    description="exlogging supports to setup python standard logging package.",
+    description="Supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
         'Topic :: Utilities',
