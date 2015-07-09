@@ -1,5 +1,5 @@
 from setuptools import setup
-import blogging
+import exlogging
 
 
 def parse_requirements():
@@ -12,9 +12,9 @@ def readme():
         return f.read()
 
 setup(
-    name='blogging',
-    version=blogging.__version__,
-    description="blogging supports to setup python standard logging package.",
+    name='exlogging',
+    version=exlogging.__version__,
+    description="exlogging supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
         'Topic :: Utilities',
@@ -31,10 +31,10 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
-    license=blogging.__license__,
-    author=blogging.__author__,
+    license=exlogging.__license__,
+    author=exlogging.__author__,
     author_email='motoki@naru.se',
-    url='https://github.com/narusemotoki/blogging',
+    url='https://github.com/narusemotoki/exlogging',
     keywords=' '.join(['log', 'logging', 'logger']),
     zip_safe=False,
     install_requires=parse_requirements(),

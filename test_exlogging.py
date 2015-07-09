@@ -1,6 +1,6 @@
 import unittest
 import mock  # unittest.mock is from Python 3.3
-import blogging
+import exlogging
 import logging.handlers
 import os
 import sys
@@ -13,27 +13,27 @@ else:
     reload = imp.reload
 
 
-class BloggingTest(unittest.TestCase):
-    filepath = '/tmp/blogging.log'
+class ExloggingTest(unittest.TestCase):
+    filepath = '/tmp/exlogging.log'
 
     def tearDown(self):
-        if os.path.isfile(BloggingTest.filepath):
-            os.remove(BloggingTest.filepath)
+        if os.path.isfile(ExloggingTest.filepath):
+            os.remove(ExloggingTest.filepath)
 
-        blogging.loggers = {}
+        exlogging.loggers = {}
         reload(logging)
 
     def test_file_hander(self):
-        blogging.init({
+        exlogging.init({
             'file': {
-                'filepath': '/tmp/blogging.log',
+                'filepath': '/tmp/exlogging.log',
                 'level': 'debug',
             }
         })
         message = "This is debug message"
-        blogging.debug(message)
+        exlogging.debug(message)
 
-        with open(BloggingTest.filepath) as f:
+        with open(ExloggingTest.filepath) as f:
             actual = f.read()
 
         self.assertTrue(message in actual, "Should record logging message.")
@@ -48,7 +48,7 @@ class BloggingTest(unittest.TestCase):
         smtp_username = 'smtp username'
         smtp_password = 'smtp password'
 
-        blogging.init({
+        exlogging.init({
             'email': {
                 'level': 'error',
                 'smtp_host': smtp_host,

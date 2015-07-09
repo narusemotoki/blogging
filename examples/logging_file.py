@@ -1,11 +1,11 @@
-import blogging
+import exlogging
 
-blogging.init({
+exlogging.init({
     'file': {
-        'filepath': '/tmp/blogging.log',
+        'filepath': '/tmp/exlogging.log',
         'level': 'debug',
     }
 })
 
-# You can see this log message at /tmp/blogging.log
-blogging.debug("Hello World")
+# You can see this log message at /tmp/exlogging.log
+exlogging.debug("Hello World")
