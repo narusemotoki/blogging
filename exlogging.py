@@ -1,5 +1,5 @@
 __author__ = 'Motoki Naruse'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __license__ = 'MIT'
 
 import logging.handlers
@@ -23,7 +23,6 @@ default_log_format = Formatter(
 
 def init(config: dict, name: str=None) -> Logger:
     def create_handler(function: types.FunctionType, config: dict) -> Handler:
-        print(config)
         if config is None:
             return None
 
