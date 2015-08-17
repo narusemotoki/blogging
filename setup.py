@@ -12,7 +12,7 @@ def readme():
 
 setup(
     name='exlogging',
-    version='0.1.2',
+    version='0.1.3',
     description="Supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
@@ -27,7 +27,6 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: Implementation :: PyPy'
     ],
     license='MIT',
     author='Motoki Naruse',
