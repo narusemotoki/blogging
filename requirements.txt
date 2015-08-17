@@ -2,4 +2,3 @@ nose
 rednose
 coverage
 flake8
-mock

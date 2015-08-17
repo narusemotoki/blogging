@@ -1,11 +1,16 @@
-__author__ = 'Motoki Naruse'
-__version__ = '0.1.1'
-__license__ = 'MIT'
-
+import pkg_resources
 import logging.handlers
 import types
 from logging import *  # noqa
 
+
+def _init_package():
+    try:
+        return pkg_resources.get_distribution('exlogging').version
+    except:
+        return "Please install this project with setup.py"
+
+__version__ = _init_package()
 
 log_levels = {
     'critical': CRITICAL,

@@ -1,5 +1,5 @@
 import unittest
-import mock  # unittest.mock is from Python 3.3
+import unittest.mock as mock
 import exlogging
 import logging.handlers
 import os

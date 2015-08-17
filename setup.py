@@ -1,5 +1,4 @@
 from setuptools import setup
-import exlogging
 
 
 def parse_requirements():
@@ -13,26 +12,25 @@ def readme():
 
 setup(
     name='exlogging',
-    version=exlogging.__version__,
+    version='0.1.2',
     description="Supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
         'Topic :: Utilities',
         'Topic :: Software Development',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Operating System :: POSIX',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
-    license=exlogging.__license__,
-    author=exlogging.__author__,
+    license='MIT',
+    author='Motoki Naruse',
     author_email='motoki@naru.se',
     url='https://github.com/narusemotoki/exlogging',
     keywords=' '.join(['log', 'logging', 'logger']),
