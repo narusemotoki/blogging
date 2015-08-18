@@ -1,18 +1,13 @@
 from setuptools import setup
 
 
-def parse_requirements():
-    with open('requirements.txt') as f:
-        return [l.strip() for l in f.readlines() if not l.startswith('#')]
-
-
 def readme():
     with open('README.rst') as f:
         return f.read()
 
 setup(
     name='exlogging',
-    version='0.1.3',
+    version='0.1.4',
     description="Supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
@@ -34,5 +29,13 @@ setup(
     url='https://github.com/narusemotoki/exlogging',
     keywords=' '.join(['log', 'logging', 'logger']),
     zip_safe=False,
-    install_requires=parse_requirements(),
+    install_requires=[],
+    extras_require={
+        'test': [
+            'nose',
+            'rednose',
+            'coverage',
+            'flake8',
+        ],
+    }
 )
