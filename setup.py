@@ -1,13 +1,14 @@
-from setuptools import setup
+import setuptools
 
 
 def readme():
     with open('README.rst') as f:
         return f.read()
 
-setup(
+setuptools.setup(
     name='exlogging',
-    version='0.1.4',
+    version='0.1.5',
+    packages=['.'],
     description="Supports to setup python standard logging package.",
     long_descriptiondescription=readme(),
     classifiers=[
